@@ -27,42 +27,7 @@ A sophisticated real-time portfolio risk management system built with FastAPI an
 
 ## 📸 Application Screenshots
 
-<table>
-  <tr>
-    <td align="center" width="33%">
-      <strong>🏠 Dashboard Overview</strong><br/>
-      <img src="./screenshots/Screenshot%202025-07-27%20at%202.41.19%20PM.png" width="300" alt="Dashboard Overview"/><br/>
-      <em>Main dashboard with portfolio metrics, market indices, and real-time data</em>
-    </td>
-    <td align="center" width="33%">
-      <strong>📊 VaR Analysis</strong><br/>
-      <img src="./screenshots/Screenshot%202025-07-27%20at%202.41.28%20PM.png" width="300" alt="VaR Analysis"/><br/>
-      <em>Value at Risk analysis with distribution charts and confidence levels</em>
-    </td>
-    <td align="center" width="33%">
-      <strong>🧪 Stress Testing</strong><br/>
-      <img src="./screenshots/Screenshot%202025-07-27%20at%202.41.39%20PM.png" width="300" alt="Stress Testing"/><br/>
-      <em>Interactive stress testing scenarios with impact visualization</em>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="33%">
-      <strong>🔗 Correlation Matrix</strong><br/>
-      <img src="./screenshots/Screenshot%202025-07-27%20at%202.41.49%20PM.png" width="300" alt="Correlation Matrix"/><br/>
-      <em>Interactive correlation heatmap with educational insights</em>
-    </td>
-    <td align="center" width="33%">
-      <strong>📈 Live Prices Monitor</strong><br/>
-      <img src="./screenshots/Screenshot%202025-07-27%20at%202.41.58%20PM.png" width="300" alt="Live Prices Monitor"/><br/>
-      <em>Real-time portfolio monitoring with rebalancing alerts</em>
-    </td>
-    <td align="center" width="33%">
-      <strong>📁 Demo Data Explorer</strong><br/>
-      <img src="./screenshots/Screenshot%202025-07-27%20at%202.42.06%20PM.png" width="300" alt="Demo Data Explorer"/><br/>
-      <em>API structure explorer with live data examples</em>
-    </td>
-  </tr>
-</table>
+<table> <tr> <td align="center" width="33%"> <strong>🏠 Dashboard Overview</strong><br/> <img src="screenshots/Screenshot 2025-07-27 at 2.41.19 PM.png" width="300"/><br/> <em>Main dashboard with portfolio metrics, market indices, and real-time data</em> </td> <td align="center" width="33%"> <strong>📊 VaR Analysis</strong><br/> <img src="screenshots/Screenshot 2025-07-27 at 2.41.28 PM.png" width="300"/><br/> <em>Value at Risk analysis with distribution charts and confidence levels</em> </td> <td align="center" width="33%"> <strong>🧪 Stress Testing</strong><br/> <img src="screenshots/Screenshot 2025-07-27 at 2.41.39 PM.png" width="300"/><br/> <em>Interactive stress testing scenarios with impact visualization</em> </td> </tr> <tr> <td align="center" width="33%"> <strong>🔗 Correlation Matrix</strong><br/> <img src="screenshots/Screenshot 2025-07-27 at 2.41.49 PM.png" width="300"/><br/> <em>Interactive correlation heatmap with educational insights</em> </td> <td align="center" width="33%"> <strong>📈 Live Prices Monitor</strong><br/> <img src="screenshots/Screenshot 2025-07-27 at 2.41.58 PM.png" width="300"/><br/> <em>Real-time portfolio monitoring with rebalancing alerts</em> </td> <td align="center" width="33%"> <strong>📁 Demo Data Explorer</strong><br/> <img src="screenshots/Screenshot 2025-07-27 at 2.42.06 PM.png" width="300"/><br/> <em>API structure explorer with live data examples</em> </td> </tr> </table>
 
 ## 🏗️ Architecture
 
@@ -382,11 +347,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **WebSocket Connection Failed**: Check if backend is running on port 8000
 - **No Market Data**: Verify API keys in `.env` file or use demo mode
 - **Slow Performance**: Enable caching and check network connection
-
-### Getting Help
-- 📧 Email: support@quantum-risk.com
-- 💬 Discord: [Join our community](https://discord.gg/quantum-risk)
-- 📖 Documentation: [Full docs](https://docs.quantum-risk.com)
 
 ---
 

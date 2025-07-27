@@ -383,11 +383,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **No Market Data**: Verify API keys in `.env` file or use demo mode
 - **Slow Performance**: Enable caching and check network connection
 
-### Getting Help
-- 📧 Email: support@quantum-risk.com
-- 💬 Discord: [Join our community](https://discord.gg/quantum-risk)
-- 📖 Documentation: [Full docs](https://docs.quantum-risk.com)
-
 ---
 
 **Built with ❤️ for the quantitative finance community**

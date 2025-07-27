@@ -31,7 +31,7 @@ A sophisticated real-time portfolio risk management system built with FastAPI an
   <tr>
     <td align="center" width="33%">
       <strong>🏠 Dashboard Overview</strong><br/>
-      <img src="./screenshots/Screenshot%202025-07-27%20at%202.41.19%20PM.png" width="300" alt="Dashboard Overview"/><br/>
+      <img src="screenshots/Screenshot 2025-07-27 at 2.41.19 PM.png"/><br/>
       <em>Main dashboard with portfolio metrics, market indices, and real-time data</em>
     </td>
     <td align="center" width="33%">

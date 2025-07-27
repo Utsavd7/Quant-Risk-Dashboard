@@ -27,29 +27,42 @@ A sophisticated real-time portfolio risk management system built with FastAPI an
 
 ## 📸 Application Screenshots
 
-### 🏠 Dashboard Overview
-![Dashboard Overview](screenshots/Screenshot%202025-07-27%20at%202.41.19%20PM.png)
-*Main dashboard with portfolio metrics, market indices, and real-time data*
-
-### 📊 VaR Analysis
-![VaR Analysis](screenshots/Screenshot%202025-07-27%20at%202.41.28%20PM.png)
-*Value at Risk analysis with distribution charts and confidence levels*
-
-### 🧪 Stress Testing
-![Stress Testing](screenshots/Screenshot%202025-07-27%20at%202.41.39%20PM.png)
-*Interactive stress testing scenarios with impact visualization*
-
-### 🔗 Correlation Matrix
-![Correlation Matrix](screenshots/Screenshot%202025-07-27%20at%202.41.49%20PM.png)
-*Interactive correlation heatmap with educational insights*
-
-### 📈 Live Prices Monitor
-![Live Prices](screenshots/Screenshot%202025-07-27%20at%202.41.58%20PM.png)
-*Real-time portfolio monitoring with rebalancing alerts*
-
-### 📁 Demo Data Explorer
-![Demo Data](screenshots/Screenshot%202025-07-27%20at%202.42.06%20PM.png)
-*API structure explorer with live data examples*
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <strong>🏠 Dashboard Overview</strong><br/>
+      <img src="./screenshots/Screenshot%202025-07-27%20at%202.41.19%20PM.png" width="300" alt="Dashboard Overview"/><br/>
+      <em>Main dashboard with portfolio metrics, market indices, and real-time data</em>
+    </td>
+    <td align="center" width="33%">
+      <strong>📊 VaR Analysis</strong><br/>
+      <img src="./screenshots/Screenshot%202025-07-27%20at%202.41.28%20PM.png" width="300" alt="VaR Analysis"/><br/>
+      <em>Value at Risk analysis with distribution charts and confidence levels</em>
+    </td>
+    <td align="center" width="33%">
+      <strong>🧪 Stress Testing</strong><br/>
+      <img src="./screenshots/Screenshot%202025-07-27%20at%202.41.39%20PM.png" width="300" alt="Stress Testing"/><br/>
+      <em>Interactive stress testing scenarios with impact visualization</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <strong>🔗 Correlation Matrix</strong><br/>
+      <img src="./screenshots/Screenshot%202025-07-27%20at%202.41.49%20PM.png" width="300" alt="Correlation Matrix"/><br/>
+      <em>Interactive correlation heatmap with educational insights</em>
+    </td>
+    <td align="center" width="33%">
+      <strong>📈 Live Prices Monitor</strong><br/>
+      <img src="./screenshots/Screenshot%202025-07-27%20at%202.41.58%20PM.png" width="300" alt="Live Prices Monitor"/><br/>
+      <em>Real-time portfolio monitoring with rebalancing alerts</em>
+    </td>
+    <td align="center" width="33%">
+      <strong>📁 Demo Data Explorer</strong><br/>
+      <img src="./screenshots/Screenshot%202025-07-27%20at%202.42.06%20PM.png" width="300" alt="Demo Data Explorer"/><br/>
+      <em>API structure explorer with live data examples</em>
+    </td>
+  </tr>
+</table>
 
 ## 🏗️ Architecture
 
@@ -285,6 +298,7 @@ Kurt = E[(R - μ)⁴] / σ⁴
 
 Where negative skewness indicates left tail risk (more frequent large losses).
 
+---
 
 ### Code Quality
 ```bash

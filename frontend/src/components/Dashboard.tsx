@@ -1,7 +1,7 @@
 // components/Dashboard.tsx - Optimized with lazy loading
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Activity, TrendingUp, AlertTriangle, BarChart3, Grid3x3, Zap } from 'lucide-react';
+import { Activity, TrendingUp, AlertTriangle, BarChart3, Grid3x3, Zap, Database } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchAllData } from '../lib/api';
 import { useWebSocket } from '../hooks/useWebSocket';
@@ -11,6 +11,8 @@ const VaRAnalysis = lazy(() => import('./VaRAnalysis'));
 const StressTest = lazy(() => import('./StressTest'));
 const CorrelationMatrix = lazy(() => import('./CorrelationMatrix'));
 const LivePrices = lazy(() => import('./LivePrices'));
+const DemoData = lazy(() => import('./DemoData'));
+const MarketIndices = lazy(() => import('./MarketIndices'));
 
 // Loading component for lazy loaded tabs
 const TabLoader = () => (
@@ -41,6 +43,7 @@ const Dashboard = () => {
     { id: 'stress', label: 'Stress Testing', icon: AlertTriangle },
     { id: 'correlation', label: 'Correlations', icon: Grid3x3 },
     { id: 'live', label: 'Live Prices', icon: Zap },
+    { id: 'demo', label: 'Demo Data', icon: Database },
   ];
 
   // Preload components when hovering over tabs
@@ -57,6 +60,9 @@ const Dashboard = () => {
         break;
       case 'live':
         import('./LivePrices');
+        break;
+      case 'demo':
+        import('./DemoData');
         break;
     }
   };
@@ -79,7 +85,7 @@ const Dashboard = () => {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Quantum Risk Analytics
+              Quantitative Risk Metrics Dashboard
             </h1>
             <p className="text-gray-400 mt-2">Real-time portfolio risk management</p>
           </div>
@@ -135,40 +141,48 @@ const Dashboard = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="space-y-6"
             >
-              <MetricCard
-                title="Portfolio VaR (95%)"
-                value={displayMetrics.var_95_historical || 0}
-                format="percentage"
-                icon={<Activity className="w-5 h-5" />}
-                trend={-2.3}
-                color="blue"
-              />
-              <MetricCard
-                title="Volatility"
-                value={displayMetrics.volatility_annual || 0}
-                format="percentage"
-                icon={<TrendingUp className="w-5 h-5" />}
-                trend={5.1}
-                color="purple"
-              />
-              <MetricCard
-                title="Sharpe Ratio"
-                value={displayMetrics.sharpe_ratio || 0}
-                format="number"
-                icon={<BarChart3 className="w-5 h-5" />}
-                trend={0.2}
-                color="green"
-              />
-              <MetricCard
-                title="Max Drawdown"
-                value={displayMetrics.max_drawdown || 0}
-                format="percentage"
-                icon={<AlertTriangle className="w-5 h-5" />}
-                trend={-1.5}
-                color="red"
-              />
+              {/* Metric Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <MetricCard
+                  title="Portfolio VaR (95%)"
+                  value={displayMetrics.var_95_historical || 0}
+                  format="percentage"
+                  icon={<Activity className="w-5 h-5" />}
+                  trend={-2.3}
+                  color="blue"
+                />
+                <MetricCard
+                  title="Volatility"
+                  value={displayMetrics.volatility_annual || 0}
+                  format="percentage"
+                  icon={<TrendingUp className="w-5 h-5" />}
+                  trend={5.1}
+                  color="purple"
+                />
+                <MetricCard
+                  title="Sharpe Ratio"
+                  value={displayMetrics.sharpe_ratio || 0}
+                  format="number"
+                  icon={<BarChart3 className="w-5 h-5" />}
+                  trend={0.2}
+                  color="green"
+                />
+                <MetricCard
+                  title="Max Drawdown"
+                  value={displayMetrics.max_drawdown || 0}
+                  format="percentage"
+                  icon={<AlertTriangle className="w-5 h-5" />}
+                  trend={-1.5}
+                  color="red"
+                />
+              </div>
+
+              {/* Market Indices */}
+              <Suspense fallback={<TabLoader />}>
+                <MarketIndices />
+              </Suspense>
             </motion.div>
           )}
 
@@ -227,6 +241,20 @@ const Dashboard = () => {
               </Suspense>
             </motion.div>
           )}
+
+          {activeTab === 'demo' && (
+            <motion.div
+              key="demo"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Suspense fallback={<TabLoader />}>
+                <DemoData />
+              </Suspense>
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
     </div>
@@ -234,7 +262,14 @@ const Dashboard = () => {
 };
 
 // Optimized MetricCard with memo
-const MetricCard = React.memo(({ title, value, format, icon, trend, color }) => {
+const MetricCard = React.memo(({ title, value, format, icon, trend, color }: {
+  title: string;
+  value: number;
+  format: string;
+  icon: React.ReactNode;
+  trend: number;
+  color: string;
+}) => {
   const formatValue = () => {
     switch (format) {
       case 'percentage':
@@ -276,5 +311,7 @@ const MetricCard = React.memo(({ title, value, format, icon, trend, color }) => 
     </motion.div>
   );
 });
+
+MetricCard.displayName = 'MetricCard';
 
 export default Dashboard;
